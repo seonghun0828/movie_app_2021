@@ -41,7 +41,7 @@ class App extends React.Component {
             {movies.map((movie) => (
               <Movie
                 key={movie.id}
-                id={movie.id}
+                rating={movie.rating}
                 title={movie.title}
                 year={movie.year}
                 genres={movie.genres}

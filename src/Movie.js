@@ -5,12 +5,13 @@ import './Movie.css';
 // state 가 필요 없으므로 class일 필요가 없음. function component로
 
 function Movie(args) {
-  const { title, year, genres, summary, poster } = args;
+  const { title, rating, year, genres, summary, poster } = args;
   return (
     <Fragment>
       <img src={poster} title={title} alt={title} />
       <div className="movie_data">
         <h3 className="movie_title">{title}</h3>
+        <h4 className="movie_rating">rating: {rating}</h4>
         <h5 className="movie_year">{year}</h5>
         <ul className="genres">
           {genres.map((genre, index) => (
@@ -26,8 +27,8 @@ function Movie(args) {
 }
 
 Movie.propTypes = {
-  id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired,
   year: PropTypes.number.isRequired,
   genres: PropTypes.arrayOf(PropTypes.string).isRequired,
   summary: PropTypes.string.isRequired,
